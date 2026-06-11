@@ -10,7 +10,7 @@ After successfully taping out an 8x8 INT4 AI Systolic Array, I am solving the "F
 
 ## Development Roadmap & Curriculum
 
-- [ ] **Level 1: The AXI4-Stream Handshake**
+- [x] **Level 1: The AXI4-Stream Handshake**
   - [x] Design cycle-accurate AXI-Stream pipeline register.
   - [x] Verify zero-data-loss under extreme backpressure (Cocotb).
 - [ ] **Level 2: The TX Datapath (Framing & CRC)**
