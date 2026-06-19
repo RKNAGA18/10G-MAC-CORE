@@ -1,7 +1,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
-VERILOG_SOURCES += $(PWD)/rtl/crc32_d8.sv $(PWD)/rtl/mac_tx.sv
-TOPLEVEL = mac_tx
+VERILOG_SOURCES += $(PWD)/rtl/mac_rx.sv
+TOPLEVEL = mac_rx
 export PYTHONPATH := $(PWD)/tb:$(PYTHONPATH)
-MODULE = test_mac_tx
+MODULE = test_mac_rx
 include $(shell cocotb-config --makefiles)/Makefile.sim
