@@ -4,16 +4,13 @@ read_lef $pdk_base/techlef/sky130_fd_sc_hd__nom.tlef
 read_lef $pdk_base/lef/sky130_fd_sc_hd.lef
 read_liberty $pdk_base/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-read_verilog mac_top_netlist.v
-link_design mac_top
+read_def mac_top_cts.def
 read_sdc mac_top.sdc
 
-initialize_floorplan -utilization 60 -aspect_ratio 1.0 -core_space 5.0 -site unithd
+# THE FIX: Restrict the global highway to M1-M5 as the foundry intended
+set_routing_layers -signal met1-met5
 
-# THE FIX: Create the grid and place pins BEFORE placing gates
-make_tracks
-place_pins -hor_layers met3 -ver_layers met4
-
-tapcell -distance 14
-write_def mac_top_floorplan.def
+global_route
+detailed_route
+write_def mac_top_routed.def
 exit

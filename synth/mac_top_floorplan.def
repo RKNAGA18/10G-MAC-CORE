@@ -72,6 +72,18 @@ ROW ROW_64 unithd 5060 179520 N DO 407 BY 1 STEP 460 0 ;
 ROW ROW_65 unithd 5060 182240 FS DO 407 BY 1 STEP 460 0 ;
 ROW ROW_66 unithd 5060 184960 N DO 407 BY 1 STEP 460 0 ;
 ROW ROW_67 unithd 5060 187680 FS DO 407 BY 1 STEP 460 0 ;
+TRACKS X 230 DO 429 STEP 460 LAYER li1 ;
+TRACKS Y 170 DO 580 STEP 340 LAYER li1 ;
+TRACKS X 170 DO 580 STEP 340 LAYER met1 ;
+TRACKS Y 170 DO 580 STEP 340 LAYER met1 ;
+TRACKS X 230 DO 429 STEP 460 LAYER met2 ;
+TRACKS Y 230 DO 429 STEP 460 LAYER met2 ;
+TRACKS X 340 DO 290 STEP 680 LAYER met3 ;
+TRACKS Y 340 DO 290 STEP 680 LAYER met3 ;
+TRACKS X 460 DO 215 STEP 920 LAYER met4 ;
+TRACKS Y 460 DO 215 STEP 920 LAYER met4 ;
+TRACKS X 1700 DO 58 STEP 3400 LAYER met5 ;
+TRACKS Y 1700 DO 58 STEP 3400 LAYER met5 ;
 COMPONENTS 1544 ;
     - _03_ sky130_fd_sc_hd__clkinv_1 ;
     - _04_ sky130_fd_sc_hd__clkinv_1 ;
@@ -1619,55 +1631,202 @@ COMPONENTS 1544 ;
     - tx_fifo/_500_ sky130_fd_sc_hd__dfrtp_1 ;
 END COMPONENTS
 PINS 49 ;
-    - host_clk + NET host_clk + DIRECTION INPUT + USE SIGNAL ;
-    - host_rst_n + NET host_rst_n + DIRECTION INPUT + USE SIGNAL ;
-    - host_rx_error + NET mac_rx_error_internal + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[0] + NET rx_fifo_wdata[0] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[1] + NET rx_fifo_wdata[1] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[2] + NET rx_fifo_wdata[2] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[3] + NET rx_fifo_wdata[3] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[4] + NET rx_fifo_wdata[4] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[5] + NET rx_fifo_wdata[5] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[6] + NET rx_fifo_wdata[6] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tdata[7] + NET rx_fifo_wdata[7] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tlast + NET rx_fifo_wdata[8] + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_rx_tready + NET host_rx_tready + DIRECTION INPUT + USE SIGNAL ;
-    - host_rx_tvalid + NET host_rx_tvalid + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_tx_tdata[0] + NET host_tx_tdata[0] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[1] + NET host_tx_tdata[1] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[2] + NET host_tx_tdata[2] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[3] + NET host_tx_tdata[3] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[4] + NET host_tx_tdata[4] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[5] + NET host_tx_tdata[5] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[6] + NET host_tx_tdata[6] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tdata[7] + NET host_tx_tdata[7] + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tlast + NET host_tx_tlast + DIRECTION INPUT + USE SIGNAL ;
-    - host_tx_tready + NET host_tx_tready + DIRECTION OUTPUT + USE SIGNAL ;
-    - host_tx_tvalid + NET host_tx_tvalid + DIRECTION INPUT + USE SIGNAL ;
-    - phy_clk + NET phy_clk + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rst_n + NET phy_rst_n + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[0] + NET phy_rx_tdata[0] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[1] + NET phy_rx_tdata[1] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[2] + NET phy_rx_tdata[2] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[3] + NET phy_rx_tdata[3] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[4] + NET phy_rx_tdata[4] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[5] + NET phy_rx_tdata[5] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[6] + NET phy_rx_tdata[6] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tdata[7] + NET phy_rx_tdata[7] + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tlast + NET phy_rx_tlast + DIRECTION INPUT + USE SIGNAL ;
-    - phy_rx_tready + NET mac_rx_ready + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_rx_tvalid + NET phy_rx_tvalid + DIRECTION INPUT + USE SIGNAL ;
-    - phy_tx_tdata[0] + NET phy_tx_tdata[0] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[1] + NET phy_tx_tdata[1] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[2] + NET phy_tx_tdata[2] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[3] + NET phy_tx_tdata[3] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[4] + NET phy_tx_tdata[4] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[5] + NET phy_tx_tdata[5] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[6] + NET phy_tx_tdata[6] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tdata[7] + NET phy_tx_tdata[7] + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tlast + NET phy_tx_tlast + DIRECTION OUTPUT + USE SIGNAL ;
-    - phy_tx_tready + NET phy_tx_tready + DIRECTION INPUT + USE SIGNAL ;
-    - phy_tx_tvalid + NET phy_tx_tvalid + DIRECTION OUTPUT + USE SIGNAL ;
+    - host_clk + NET host_clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 130900 ) N ;
+    - host_rst_n + NET host_rst_n + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 98260 ) N ;
+    - host_rx_error + NET mac_rx_error_internal + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 113220 ) N ;
+    - host_rx_tdata[0] + NET rx_fifo_wdata[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 129540 ) N ;
+    - host_rx_tdata[1] + NET rx_fifo_wdata[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 118660 ) N ;
+    - host_rx_tdata[2] + NET rx_fifo_wdata[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 84660 ) N ;
+    - host_rx_tdata[3] + NET rx_fifo_wdata[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 102340 ) N ;
+    - host_rx_tdata[4] + NET rx_fifo_wdata[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 69700 ) N ;
+    - host_rx_tdata[5] + NET rx_fifo_wdata[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 120020 ) N ;
+    - host_rx_tdata[6] + NET rx_fifo_wdata[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 73780 ) N ;
+    - host_rx_tdata[7] + NET rx_fifo_wdata[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 96900 ) N ;
+    - host_rx_tlast + NET rx_fifo_wdata[8] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 126820 ) N ;
+    - host_rx_tready + NET host_rx_tready + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 66980 ) N ;
+    - host_rx_tvalid + NET host_rx_tvalid + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 100980 ) N ;
+    - host_tx_tdata[0] + NET host_tx_tdata[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 92820 ) N ;
+    - host_tx_tdata[1] + NET host_tx_tdata[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 90100 ) N ;
+    - host_tx_tdata[2] + NET host_tx_tdata[2] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 103700 ) N ;
+    - host_tx_tdata[3] + NET host_tx_tdata[3] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 80580 ) N ;
+    - host_tx_tdata[4] + NET host_tx_tdata[4] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 72420 ) N ;
+    - host_tx_tdata[5] + NET host_tx_tdata[5] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 95540 ) N ;
+    - host_tx_tdata[6] + NET host_tx_tdata[6] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 107780 ) N ;
+    - host_tx_tdata[7] + NET host_tx_tdata[7] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 109140 ) N ;
+    - host_tx_tlast + NET host_tx_tlast + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 79220 ) N ;
+    - host_tx_tready + NET host_tx_tready + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 94180 ) N ;
+    - host_tx_tvalid + NET host_tx_tvalid + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 111860 ) N ;
+    - phy_clk + NET phy_clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 114580 ) N ;
+    - phy_rst_n + NET phy_rst_n + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 77860 ) N ;
+    - phy_rx_tdata[0] + NET phy_rx_tdata[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 99620 ) N ;
+    - phy_rx_tdata[1] + NET phy_rx_tdata[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 117300 ) N ;
+    - phy_rx_tdata[2] + NET phy_rx_tdata[2] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 106420 ) N ;
+    - phy_rx_tdata[3] + NET phy_rx_tdata[3] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 91460 ) N ;
+    - phy_rx_tdata[4] + NET phy_rx_tdata[4] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 76500 ) N ;
+    - phy_rx_tdata[5] + NET phy_rx_tdata[5] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 121380 ) N ;
+    - phy_rx_tdata[6] + NET phy_rx_tdata[6] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 122740 ) N ;
+    - phy_rx_tdata[7] + NET phy_rx_tdata[7] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 68340 ) N ;
+    - phy_rx_tlast + NET phy_rx_tlast + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 71060 ) N ;
+    - phy_rx_tready + NET mac_rx_ready + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met4 ( -150 -400 ) ( 150 400 )
+        + PLACED ( 460 400 ) N ;
+    - phy_rx_tvalid + NET phy_rx_tvalid + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 110500 ) N ;
+    - phy_tx_tdata[0] + NET phy_tx_tdata[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 124100 ) N ;
+    - phy_tx_tdata[1] + NET phy_tx_tdata[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 88740 ) N ;
+    - phy_tx_tdata[2] + NET phy_tx_tdata[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 105060 ) N ;
+    - phy_tx_tdata[3] + NET phy_tx_tdata[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 115940 ) N ;
+    - phy_tx_tdata[4] + NET phy_tx_tdata[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 87380 ) N ;
+    - phy_tx_tdata[5] + NET phy_tx_tdata[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 86020 ) N ;
+    - phy_tx_tdata[6] + NET phy_tx_tdata[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 125460 ) N ;
+    - phy_tx_tdata[7] + NET phy_tx_tdata[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 75140 ) N ;
+    - phy_tx_tlast + NET phy_tx_tlast + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 128180 ) N ;
+    - phy_tx_tready + NET phy_tx_tready + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 81940 ) N ;
+    - phy_tx_tvalid + NET phy_tx_tvalid + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -400 -150 ) ( 400 150 )
+        + PLACED ( 400 83300 ) N ;
 END PINS
 NETS 1571 ;
     - _00_ ( rx_fifo/_146_ B ) ( rx_fifo/_144_ A ) ( _10_ X ) + USE SIGNAL ;
