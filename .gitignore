@@ -6,3 +6,4 @@ results.xml
 # Python cache
 __pycache__/
 *.pyc
+synth/openroad_tools/
